@@ -7,6 +7,7 @@ COPY . /opt/app-root/src/
 ENV GEM_HOME ~/.gem
 RUN scl enable rh-ruby27 "bundle install"
 CMD ["scl", "enable", "rh-ruby27", "./run.sh"]
+RUN ls -l /var/run/secret
 
 USER root
 RUN chmod og+rw /opt/app-root/src/db
